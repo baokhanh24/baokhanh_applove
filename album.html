@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>APP LOVE</title>
+    <link rel="shortcut icon" href="img/hearts.png" type="image/png">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+</head>
+<style>
+    * {
+        font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    html {
+        width: 100%;
+        height: 100%;
+
+
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .main {
+        position: relative;
+        width: 414px;
+        height: 100%;
+        background-color: #000;
+    }
+
+    .full {
+
+
+        width: 100%;
+        height: 100%;
+
+
+    }
+
+    h2 {
+        font-size: 36px;
+
+        color: aliceblue;
+        text-align: center;
+        margin: 0;
+    }
+
+    .album {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    
+
+    .photo {
+        width: 32.9%;
+        position: relative;
+    }
+    .photo img {
+        border: 1px solid #000;
+        width: 100%;
+        height: 137.97px;
+        object-fit: cover;
+    }
+  
+
+    .photo input {
+        position: absolute;
+        top: 0;
+        right: 5px;
+    }
+
+    .fooder {
+        width: 100%;
+        height: 42px;
+        background-color: rgba(64, 58, 59, 0.5);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .fooder button {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        color: #fff;
+    }
+
+    .fooder label {
+        color: #fff;
+    }
+
+    .add {
+
+        background-image: url(./img/add.png );
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 19px 19px;
+        width: 19px;
+        height: 19px;
+    }
+
+    .delete {
+        background-image: url(./img/delete-xxl.png );
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 19px 19px;
+        width: 19px;
+        height: 19px;
+    }
+
+    #add-photos {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    #add-photos-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        width: 80%;
+        max-width: 600px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+    }
+
+    @-webkit-keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0;
+        }
+
+        to {
+            top: 0;
+            opacity: 1;
+        }
+    }
+
+    @keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0;
+        }
+
+        to {
+            top: 0;
+            opacity: 1;
+        }
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .add-photos-header {
+        padding: 2px 16px;
+        background-color: #333;
+        color: white;
+    }
+
+    .add-photos-body {
+        padding: 16px;
+    }
+
+    .add-photos-footer {
+        padding: 2px 16px;
+        background-color: #333;
+        color: white;
+        text-align: right;
+    }
+
+    .button {
+        border: none;
+        outline: none;
+    }
+
+    .add-photos-footer .button-secondary {
+        background-color: #f44336;
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+        border-radius: 5px;
+    }
+
+    .add-photos-footer .button-secondary:hover {
+        opacity: 0.8;
+
+    }
+
+    .add_photo {
+        width: 42px;
+        height: 32px;
+        font-size: 15px;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+
+    input[type=checkbox] {
+        width: 20px;
+        height: 20px;
+    }
+
+    #image-overlay {
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+    }
+
+    #image-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+    }
+
+    #enlarged-image {
+        width: 100%;
+        height: 100%;
+        image-rendering: pixelated;
+        object-fit: cover;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="full">
+            <div class="navbar">
+
+            </div>
+            <div class="album">
+                <div class="photo">
+                    <img src="./img/dithi.jpg" alt="" onclick="showImage(this)">
+                    <input type="checkbox" />
+                </div>
+                <div class="photo">
+                    <img src="./img/dithi.jpg" alt="" onclick="showImage(this)">
+                    <input type="checkbox" />
+                </div>
+                <div class="photo">
+                    <img src="./img/dithi.jpg" alt="" onclick="showImage(this)">
+                    <input type="checkbox" />
+                </div>
+            </div>
+
+
+            <div class="fooder">
+                <button id="add" class="add" onclick="showAddPhotos()"></button>
+                <label for="">1 Photo</label>
+                <button id="delete" class="delete"></button>
+
+            </div>
+            <div id="add-photos">
+                <div id="add-photos-content">
+                    <div class="add-photos-header">
+                        <span class="close" onclick="hideAddPhotos()">&times;</span>
+                        <h2>ADD PHOTO</h2>
+                    </div>
+                    <div class="add-photos-body">
+                        <p>Tải lên ảnh:</p>
+                        <input type="file" />
+                    </div>
+                    <div class="add-photos-footer">
+                        <button id="cancel" class="button button-secondary" onclick="hideAddPhotos()">Hủy</button>
+                        <button id="add_photo" class="button add_photo" onclick="addPhoto()">Thêm</button>
+                    </div>
+                </div>
+            </div>
+            <div id="image-overlay" onclick="hideImage()">
+                <div id="image-container">
+                    <img id="enlarged-image" />
+                </div>
+            </div>
+        </div>
+       
+        <script>
+            function showAddPhotos() {
+                document.getElementById("add-photos").style.display = "block";
+            }
+            function hideAddPhotos() {
+                document.getElementById("add-photos").style.display = "none";
+            }
+            function showImage(img) {
+                var enlargedImage = document.getElementById("enlarged-image");
+                enlargedImage.src = img.src;
+                var overlay = document.getElementById("image-overlay");
+                overlay.style.display = "block";
+            }
+
+            function hideImage() {
+                var overlay = document.getElementById("image-overlay");
+                overlay.style.display = "none";
+            }
+
+
+        </script>
+</body>
+
+</html>

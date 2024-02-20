@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.chat-container {
+  position: relative;
+  display: inline-block;
+}
+
+#chat-icon {
+  background-color: #0084ff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#chat-icon:hover {
+  background-color: #0073e6;
+}
+
+.chat-box {
+  display: none;
+  position: absolute;
+  bottom: -365px;
+    right: -306px;
+  width: 300px;
+  height: 400px;
+  background-color: #721616;
+  border: 1px solid #770808;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: scroll;
+}
+
+.chat-header {
+  background-color: #980c0c;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.chat-header h2 {
+  margin: 0;
+}
+
+.chat-body {
+  padding: 10px;
+}
+
+.message {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.incoming {
+  align-items: flex-start;
+}
+
+.outgoing {
+  align-items: flex-end;
+}
+
+.message p {
+  background-color: #752a2a;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0;
+}
+
+.chat-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.chat-footer input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-footer button {
+  width: 18%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0084ff;
+  color: #fff;
+ 
+}
+</style>
+
+<body>
+    <div class="chat-container">
+        <button id="chat-icon"><i class="fab fa-facebook-messenger"></i></button>
+        <div class="chat-box">
+          <div class="chat-header">
+            <h2>Chat</h2>
+          </div>
+          <div class="chat-body">
+            <div class="message incoming">
+              <p>Hi there!</p>
+            </div>
+            <div class="message outgoing">
+              <p>Hey!</p>
+            </div>
+            <div class="message incoming">
+              <p>How are you?</p>
+            </div>
+            <div class="message outgoing">
+              <p>Good, thanks!</p>
+            </div>
+          </div>
+          <div class="chat-footer">
+            <input type="text" placeholder="Type your message here...">
+            <button>Send</button>
+          </div>
+        </div>
+      </div>
+      
+</body>
+<script>
+    const chatIcon = document.getElementById('chat-icon');
+const chatBox = document.querySelector('.chat-box');
+
+chatIcon.addEventListener('click', function() {
+  if (chatBox.style.display === 'none') {
+    chatBox.style.display = 'block';
+  } else {
+    chatBox.style.display = 'none';
+  }
+});
+
+</script>
+
+</html> 

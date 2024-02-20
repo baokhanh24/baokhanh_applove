@@ -13,11 +13,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <style>
         .menu{
             display: flex;
             flex-direction: column;
             justify-content: center;
+            display: none;
         }
         .number_phone.show {
             display: block;
@@ -44,11 +46,11 @@
                 <div class="fullname">
                     <div class="name">
                         <div class="name_men">
-                            <img src="/img/khanh.png" alt="" class="share">
+                            <img src="/img/khanhpr.png" alt="" class="share">
                             <span class="name_share">Bảo Khánh</span>
                         </div>
                         <div class="name_woman">
-                            <img src="/img/thi.png" alt="" class="share">
+                            <img src="/img/thipro.png" alt="" class="share">
                             <span class="name_share">Bảo Thi</span>
                         </div>
                     </div>
@@ -65,7 +67,7 @@
                 </div>
                 <div class="mess_note">
                     <div class="messenger">
-                        <span class="note">NOTE:</span>   
+                        <span class="note">NOTIFY:</span>   
                         <span class="Notification">chúc mừng app</span>  
                     </div>    
                 </div>
@@ -76,7 +78,7 @@
                     <ul class="navbar">
                         <li class="navbar_li" id="navbar_li"  onclick="toggleMenu(event)" ><a href="" class="heart"><i class='bx bx-heart'></i></a>
                             <ul class="menu" id="menu">
-                                <li><a href=""><i class='bx bx-notepad'></i> Ghi Chú</a></li>
+                                <li><a href="./Note.html"><i class='bx bx-notepad'></i> Note</a></li>
                                 <li><a href=""><i class='bx bx-photo-album' ></i> Photo Love</a></li>
                                 
                             </ul>
@@ -90,8 +92,14 @@
                             </ul>
                         </li>
                     </ul>
-                    
                 </div>    
+            </div>
+        </div>
+        <div class="modal">
+            <div class="moadl_heart">
+                <h1>Mãi Yêu Em ❤️</h1>
+                <div class="heart_love">
+                </div>
             </div>
         </div>
     </div>
@@ -162,12 +170,43 @@
     dateLoveSpan.innerText = diffDays + " Days";
 </script>
 <script>
+    function fireConfetti() {
+        var duration = 15 * 1000;
+        var animationEnd = Date.now() + duration;
+        var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+        function randomInRange(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        var interval = setInterval(function() {
+            var timeLeft = animationEnd - Date.now();
+
+            if (timeLeft <= 0) {
+                return clearInterval(interval);
+            }
+
+            var particleCount = 50 * (timeLeft / duration);
+            // since particles fall down, start a bit higher than random
+            confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+            confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+        }, 250);
+    }
+    function HeartLove() {
+        var heart  = document.querySelector('.modal');
+        var timeout = setTimeout(()=> {
+            heart.style.display = 'block';
+        },5000)
+        setTimeout(() => {
+            heart.style.display = 'none';
+        },12000)
+    }
         // Lấy ngày hiện tại
     var today = new Date();
 
     // Ngày sinh nhật anh Khánh
     var birthdaymen = new Date("2023-09-24");
-    var birthdaygirl = new Date("2023-02-21");
+    var birthdaygirl = new Date("2023-02-20");
     var travel = new Date("2023-04-07");
     // Ngày kỉ niệm 1 năm yêu nhau
     var anniversary = new Date("2023-06-24");
@@ -176,18 +215,23 @@
     if (today.getDate() === birthdaymen.getDate() && today.getMonth() === birthdaymen.getMonth()) {
     // Thay đổi nội dung của thẻ span thành "Chúc mừng sinh nhật anh Khánh"
     document.querySelector('.Notification').innerHTML = "Chúc mừng sinh nhật anh Khánh";
+    fireConfetti();
     }
     if (today.getDate() === travel.getDate() && today.getMonth() === travel.getMonth()) {
     document.querySelector('.Notification').innerHTML = "Hôm nay đi du lịch ở Huế";
     }
     if (today.getDate() === birthdaygirl.getDate() && today.getMonth() === birthdaygirl.getMonth()) {
     // Thay đổi nội dung của thẻ span thành "Chúc mừng sinh nhật anh Khánh"
-    document.querySelector('.Notification').innerHTML = "Chúc mừng sinh nhật chị Thi";
+    document.querySelector('.Notification').innerHTML = "Chúc mừng sinh nhật E IU ❤️";
+    fireConfetti();
+    HeartLove();
     }
     // So sánh ngày hiện tại với ngày kỉ niệm 1 năm yêu nhau
     if (today.getDate() === anniversary.getDate() && today.getMonth() === anniversary.getMonth()) {
     // Thay đổi nội dung của thẻ span thành "Chúc mừng kỉ niệm 1 năm yêu nhau"
     document.querySelector('.Notification').innerHTML = "Chúc mừng kỉ niệm 1 năm yêu nhau";
+    fireConfetti()
     }
+    
 </script>
 </html>

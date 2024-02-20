@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<Style>
+  .album {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  position: relative;
+  flex: 1 0 25%;
+  margin: 10px;
+}
+
+img {
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.item:hover .overlay {
+  opacity: 1;
+}
+
+video {
+  width: 80%;
+  height: 80%;
+}
+
+</Style>
+<body>
+  <div class="album">
+    <div class="item">
+      <img src="img/dikhanh.jpg">
+      <div class="overlay">
+        <video src="img/4582176610483586526.mp4" autoplay loop></video>
+      </div>
+    </div>
+    <div class="item">
+      <img src="img/dithi.jpg">
+      <div class="overlay">
+        <video src="img/4582176610483586526.mp4" autoplay loop></video>
+      </div>
+    </div>
+    <div class="item">
+      <img src="image3.jpg">
+      <div class="overlay">
+        <video src="img/4582176610483586526.mp4" autoplay loop></video>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
