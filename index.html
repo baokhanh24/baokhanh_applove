@@ -1,161 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>APP LOVE</title> 
-    <link rel="shortcut icon" href="img/hearts.png" type="image/png">
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>APP LOVE</title>
+    <link rel="shortcut icon" href="img/hearts.png" type="image/png" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <style>
-        .menu{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            display: none;
-        }
-        .number_phone.show {
-            display: block;
-        }
-        
+      .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        display: none;
+      }
+      .number_phone.show {
+        display: block;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main">
-        <div class="contaier">
-            <div class="header">
-                <div class="logo">
-                    <img src="./img/hearts.png" alt="" class="logo_love">
-                </div>
-                <div class="datetime">
-                    <span class="date_love"></span>
-                </div>
-            </div>
-            <div class="center">
-                <div class="avatar">
-                    <img class="jointphoto" src="./img/man.png" alt="">
-                    <img src="./img/beauty.png" alt="" class="jointphoto">
-                </div>
-                <div class="fullname">
-                    <div class="name">
-                        <div class="name_men">
-                            <img src="https://raw.githubusercontent.com/baokhanh24/app_love/4a01ecd1aa02451d6054dc20e1727a46d7ce3462/img/khanhpr.png" alt="" class="share">
-                            <span class="name_share">Bảo Khánh</span>
-                        </div>
-                        <div class="name_woman">
-                            <img src="https://raw.githubusercontent.com/baokhanh24/app_love/4a01ecd1aa02451d6054dc20e1727a46d7ce3462/img/thipro.png" alt="" class="share">
-                            <span class="name_share">Bảo Thi</span>
-                        </div>
-                    </div>
-                    <div class="cung">
-                        <div class="duc">
-                            <img src="./img/mars.png" alt="" class="share_sex">
-                            <span class="name_cung">Thiên Bình</span>
-                        </div>
-                        <div class="cai">
-                            <img src="./img/femenine.png" alt=""class="share_sex">
-                            <span class="name_cung">Song Ngư</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="mess_note">
-                    <div class="messenger">
-                        <span class="note">NOTIFY:</span>   
-                        <span class="Notification">chúc mừng app</span>  
-                    </div>    
-                </div>
-                
-            </div>
-            <div class="fooder">
-                <div class="bottom">
-                    <ul class="navbar">
-                        <li class="navbar_li" id="navbar_li"  onclick="toggleMenu(event)" ><a href="" class="heart"><i class='bx bx-heart'></i></a>
-                            <ul class="menu" id="menu">
-                                <li><a href="./Note.html"><i class='bx bx-notepad'></i> Note</a></li>
-                                <li><a href=""><i class='bx bx-photo-album' ></i> Photo Love</a></li>
-                                
-                            </ul>
-                        </li>
-                        <li class="navbar_home"><a href="" class="home"><i class='bx bx-home' ></i></a></li>
-                        <li class="phone_li" onclick="showMenu(event)"><a href="" class="phone"><i class='bx bx-phone'></i></a>
-                            <ul class="number_phone" id="number_phone">
-                                <li><a href="tel:0906457971"><i class='bx bx-phone'>Khánh</i> 0906457971</a></li>
-                                <li><a href="tel:0905014507"><i class='bx bx-phone'>Thi</i> 0905014507</a></li>
-                                
-                            </ul>
-                        </li>
-                    </ul>
-                </div>    
-            </div>
+      <div class="contaier">
+        <div class="header">
+          <div class="logo">
+            <img src="./img/hearts.png" alt="" class="logo_love" />
+          </div>
+          <div class="datetime">
+            <span class="date_love"></span>
+          </div>
         </div>
-        <div class="modal">
-            <div class="moadl_heart">
-                <h1>Mãi Yêu Em ❤️</h1>
-                <div class="heart_love">
-                </div>
+        <div class="center">
+          <div class="avatar">
+            <img class="jointphoto" src="./img/khanh.png" alt="" />
+            <img src="./img/thi.png" alt="" class="jointphoto" />
+          </div>
+          <div class="fullname">
+            <div class="name">
+              <div class="name_men">
+                <img
+                  src="https://raw.githubusercontent.com/baokhanh24/app_love/4a01ecd1aa02451d6054dc20e1727a46d7ce3462/img/khanhpr.png"
+                  alt=""
+                  class="share"
+                />
+                <span class="name_share">Bảo Khánh</span>
+              </div>
+              <div class="name_woman">
+                <img
+                  src="https://raw.githubusercontent.com/baokhanh24/app_love/4a01ecd1aa02451d6054dc20e1727a46d7ce3462/img/thipro.png"
+                  alt=""
+                  class="share"
+                />
+                <span class="name_share">Bảo Thi</span>
+              </div>
             </div>
+            <div class="cung">
+              <div class="duc">
+                <img src="./img/mars.png" alt="" class="share_sex" />
+                <span class="name_cung">Thiên Bình</span>
+              </div>
+              <div class="cai">
+                <img src="./img/femenine.png" alt="" class="share_sex" />
+                <span class="name_cung">Song Ngư</span>
+              </div>
+            </div>
+          </div>
+          <div class="mess_note">
+            <div class="messenger">
+              <span class="note">NOTIFY:</span>
+              <span class="Notification">chúc mừng app</span>
+            </div>
+          </div>
         </div>
+        <div class="fooder">
+          <div class="bottom">
+            <ul class="navbar">
+              <li class="navbar_li" id="navbar_li" onclick="toggleMenu(event)">
+                <a href="" class="heart"><i class="bx bx-heart"></i></a>
+                <ul class="menu" id="menu">
+                  <li>
+                    <a href="./Note.html"><i class="bx bx-notepad"></i> Note</a>
+                  </li>
+                  <li>
+                    <a href=""><i class="bx bx-photo-album"></i> Photo Love</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="navbar_home">
+                <a href="" class="home"><i class="bx bx-home"></i></a>
+              </li>
+              <li class="phone_li" onclick="showMenu(event)">
+                <a href="" class="phone"><i class="bx bx-phone"></i></a>
+                <ul class="number_phone" id="number_phone">
+                  <li>
+                    <a href="tel:0906457971"
+                      ><i class="bx bx-phone">Khánh</i> 0906457971</a
+                    >
+                  </li>
+                  <li>
+                    <a href="tel:0905014507"
+                      ><i class="bx bx-phone">Thi</i> 0905014507</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal">
+        <div class="moadl_heart">
+          <h1>Mãi Yêu Em ❤️</h1>
+          <div class="heart_love"></div>
+        </div>
+      </div>
     </div>
-</body>
-<script>
+  </body>
+  <script>
     // Lấy tham chiếu đến các phần tử HTML cần sử dụng
     // Lấy tham chiếu đến các phần tử HTML cần sử dụng
     function toggleMenu(event) {
-        if (event.target.tagName !== "A") {
-            event.preventDefault();
-             event.stopPropagation(); // Ngăn chặn việc load lại trang sau khi click
-            var menu = document.getElementById("menu");
-            if (menu.style.display === "block") {
-            menu.style.display = "none";
-            } else {
-            menu.style.display = "block";
-            }
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        event.stopPropagation(); // Ngăn chặn việc load lại trang sau khi click
+        var menu = document.getElementById("menu");
+        if (menu.style.display === "block") {
+          menu.style.display = "none";
+        } else {
+          menu.style.display = "block";
         }
-        document.addEventListener("click", function(event) {
+      }
+      document.addEventListener("click", function (event) {
         var menu = document.getElementById("menu");
         var isClickInsideMenu = menu.contains(event.target);
-       
-        if (!isClickInsideMenu ) {
-            menu.style.display = "none";
+
+        if (!isClickInsideMenu) {
+          menu.style.display = "none";
         }
-    });     
+      });
     }
-    
-</script>
-<script>
+  </script>
+  <script>
     // Lấy tham chiếu đến các phần tử HTML cần sử dụng
     // Lấy tham chiếu đến các phần tử HTML cần sử dụng
     function showMenu(event) {
-        if (event.target.tagName !== "A") {
-            event.preventDefault();
-             event.stopPropagation(); // Ngăn chặn việc load lại trang sau khi click
-            var menu = document.getElementById("number_phone");
-            if (menu.style.display === "block") {
-            menu.style.display = "none";
-            } else {
-            menu.style.display = "block";
-            }
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        event.stopPropagation(); // Ngăn chặn việc load lại trang sau khi click
+        var menu = document.getElementById("number_phone");
+        if (menu.style.display === "block") {
+          menu.style.display = "none";
+        } else {
+          menu.style.display = "block";
         }
-        document.addEventListener("click", function(event) {
+      }
+      document.addEventListener("click", function (event) {
         var menu = document.getElementById("number_phone");
         var isClickInsideMenu = menu.contains(event.target);
-        
-        if (!isClickInsideMenu ) {
-            menu.style.display = "none";
+
+        if (!isClickInsideMenu) {
+          menu.style.display = "none";
         }
-    });     
+      });
     }
-    
-</script>
-<script>
-        // Lấy ngày hiện tại
+  </script>
+  <script>
+    // Lấy ngày hiện tại
     var today = new Date();
 
     // Ngày 24/06/2022
@@ -168,40 +194,48 @@
     // Gán giá trị vào phần tử span
     var dateLoveSpan = document.querySelector(".date_love");
     dateLoveSpan.innerText = diffDays + " Days";
-</script>
-<script>
+  </script>
+  <script>
     function fireConfetti() {
-        var duration = 15 * 1000;
-        var animationEnd = Date.now() + duration;
-        var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+      var duration = 15 * 1000;
+      var animationEnd = Date.now() + duration;
+      var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
-        function randomInRange(min, max) {
-            return Math.random() * (max - min) + min;
+      function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      var interval = setInterval(function () {
+        var timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+          return clearInterval(interval);
         }
 
-        var interval = setInterval(function() {
-            var timeLeft = animationEnd - Date.now();
-
-            if (timeLeft <= 0) {
-                return clearInterval(interval);
-            }
-
-            var particleCount = 50 * (timeLeft / duration);
-            // since particles fall down, start a bit higher than random
-            confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-            confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
-        }, 250);
+        var particleCount = 50 * (timeLeft / duration);
+        // since particles fall down, start a bit higher than random
+        confetti({
+          ...defaults,
+          particleCount,
+          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+        });
+        confetti({
+          ...defaults,
+          particleCount,
+          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+        });
+      }, 250);
     }
     function HeartLove() {
-        var heart  = document.querySelector('.modal');
-        var timeout = setTimeout(()=> {
-            heart.style.display = 'block';
-        },5000)
-        setTimeout(() => {
-            heart.style.display = 'none';
-        },12000)
+      var heart = document.querySelector(".modal");
+      var timeout = setTimeout(() => {
+        heart.style.display = "block";
+      }, 5000);
+      setTimeout(() => {
+        heart.style.display = "none";
+      }, 12000);
     }
-        // Lấy ngày hiện tại
+    // Lấy ngày hiện tại
     var today = new Date();
 
     // Ngày sinh nhật anh Khánh
@@ -212,26 +246,54 @@
     var anniversary = new Date("2023-06-24");
 
     // So sánh ngày hiện tại với ngày sinh nhật anh Khánh
-    if (today.getDate() === birthdaymen.getDate() && today.getMonth() === birthdaymen.getMonth()) {
-    // Thay đổi nội dung của thẻ span thành "Chúc mừng sinh nhật anh Khánh"
-    document.querySelector('.Notification').innerHTML = "Chúc mừng sinh nhật anh Khánh";
-    fireConfetti();
+    if (
+      today.getDate() === birthdaymen.getDate() &&
+      today.getMonth() === birthdaymen.getMonth()
+    ) {
+      // Thay đổi nội dung của thẻ span thành "Chúc mừng sinh nhật anh Khánh"
+      document.querySelector(".Notification").innerHTML =
+        "Chúc mừng sinh nhật anh Khánh";
+      fireConfetti();
     }
-    if (today.getDate() === travel.getDate() && today.getMonth() === travel.getMonth()) {
-    document.querySelector('.Notification').innerHTML = "Hôm nay đi du lịch ở Huế";
+    if (
+      today.getDate() === travel.getDate() &&
+      today.getMonth() === travel.getMonth()
+    ) {
+      document.querySelector(".Notification").innerHTML =
+        "Hôm nay đi du lịch ở Huế";
     }
-    if (today.getDate() === birthdaygirl.getDate() && today.getMonth() === birthdaygirl.getMonth()) {
-    // Thay đổi nội dung của thẻ span thành "Chúc mừng sinh nhật anh Khánh"
-    document.querySelector('.Notification').innerHTML = "Chúc mừng sinh nhật E IU ❤️";
-    fireConfetti();
-    HeartLove();
+    if (
+      today.getDate() === birthdaygirl.getDate() &&
+      today.getMonth() === birthdaygirl.getMonth()
+    ) {
+      // Thay đổi nội dung của thẻ span thành "Chúc mừng sinh nhật anh Khánh"
+      document.querySelector(".Notification").innerHTML =
+        "Chúc mừng sinh nhật E IU ❤️";
+      fireConfetti();
+      HeartLove();
     }
     // So sánh ngày hiện tại với ngày kỉ niệm 1 năm yêu nhau
-    if (today.getDate() === anniversary.getDate() && today.getMonth() === anniversary.getMonth()) {
-    // Thay đổi nội dung của thẻ span thành "Chúc mừng kỉ niệm 1 năm yêu nhau"
-    document.querySelector('.Notification').innerHTML = "Chúc mừng kỉ niệm 1 năm yêu nhau";
-    fireConfetti()
+    let i = 2; // Declare i outside of the conditional block
+
+    function checkAnniversary() {
+      let today = new Date();
+      let anniversary = new Date(2023, 5, 24); // Replace with your actual anniversary date
+
+      if (
+        today.getDate() === anniversary.getDate() &&
+        today.getMonth() === anniversary.getMonth()
+      ) {
+        // Change the content of the span to "Chúc mừng kỉ niệm X năm yêu nhau"
+        document.querySelector(
+          ".Notification"
+        ).innerHTML = `Chúc mừng kỉ niệm ${i++} năm yêu nhau`;
+      }
     }
-    
-</script>
+
+    // Call checkAnniversary function to check the date
+    checkAnniversary();
+
+    // If you want to check the anniversary date periodically, you can use setInterval
+    setInterval(checkAnniversary, 24 * 60 * 60 * 1000); // Check once a day
+  </script>
 </html>
